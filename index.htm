@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Öz saytını yarat</title>
+  <link rel="stylesheet" href="output.css" />
+  <link rel="shortcut icon" href="https://api.ureb.com/storage/4230/icon-(1).png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />  
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+    </style>
+    <style>
+      .linAnimation {
+          position: relative;
+          animation: myfirst 1.5s ease-in infinite;
+      }
+
+      @keyframes myfirst {
+          0% {
+              opacity: 0;
+              left: 0px;
+              top: -5px;
+          }
+
+          50% {
+              opacity: .5;
+          }
+
+          100% {
+              top: 27px;
+              left: 0px;
+              opacity: 1;
+          }
+    }
+    </style>
+
+<style>
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+
+  body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+  .swiper {
+    width: 90%;
+    height: 380px;
+    border-radius: 10px;
+    border: 1px solid #bdbdbd;
+ 
+    
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px; /* Sol tərəfdə boşluq */
+    padding-right: 20px; /* Sağ tərəfdə boşluq */
+    
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+</style>
+</head>
+<header class="sticky z-50 top-0">
+  <nav class="bg-white border-gray-200 dark:bg-gray-900 ">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img
+          src="https://site.az/_next/image?url=https%3A%2F%2Fapi.ureb.com%2Fstorage%2F4229%2Flogo-black.svg&w=256&q=75"
+          class="h-[20px] w-[80px] md:h-[30px] md:w-[110px] " />
+      </a>
+
+
+
+      <div class="flex items-center space-x-3 rtl:space-x-reverse " id="navbar-language">
+        <ul class=" hidden lg:flex items-center space-x-3 rtl:space-x-reverse font-bold gap-[30px] font-manrope ">
+
+          <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+              class="flex items-center justify-between  w-full px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+              Veb Sayt <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 4 4 4-4" />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar"
+              class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-[100px] dark:bg-gray-700 dark:divide-gray-600">
+              <ul class="py-2 text-center text-sm text-gray-700 dark:text-gray-400"
+                aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="#"
+                    class="block px-[15px] py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block px-[15px] py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block px-[15px] py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                </li>
+              </ul>
+              <div class="py-1 text-center">
+                <a href="#"
+                  class="block px-[15px] py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                  out</a>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+              class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Domen
+              <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 4 4 4-4" />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar"
+              class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-400 " aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="#"
+                    class="block px-4 py-2  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                </li>
+              </ul>
+              <div class="py-1">
+                <a href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                  out</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+              class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Hostinq
+              <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 4 4 4-4" />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar"
+              class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                </li>
+              </ul>
+              <div class="py-1">
+                <a href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                  out</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+              class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Xidmətlər
+              <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 4 4 4-4" />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar"
+              class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                </li>
+              </ul>
+              <div class="py-1">
+                <a href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                  out</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+              class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Şirkət
+              <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 4 4 4-4" />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar"
+              class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                <li>
+                  <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                </li>
+              </ul>
+              <div class="py-1">
+                <a href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                  out</a>
+              </div>
+            </div>
+          </li>
+
+
+
+        </ul>
+      </div>
+
+      <div class="flex items-center space-x-3 rtl:space-x-reverse md:gap-3">
+
+
+
+
+        <div>
+          <button type="button" data-dropdown-toggle="currency-dropdown-menu"
+            class="inline-flex items-center font-medium justify-center py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+            <i class="fa-solid fa-manat-sign text-[1.2em] rounded-full me-2 "></i><i
+              class="fa-solid fa-chevron-down"></i>
+
+          </button>
+          <!-- Dropdown for currency -->
+          <div
+            class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700"
+            id="currency-dropdown-menu">
+            <ul class="py-2 font-medium" role="none">
+              <li>
+                <a href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                  role="menuitem">
+                  <div class="inline-flex items-center">
+                    <i class="fa-solid fa-manat-sign  h-3.5 w-3.5 rounded-full me-2 "></i>
+                  </div>
+                </a>
+
+              </li>
+              <li>
+                <a href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                  role="menuitem">
+                  <div class="inline-flex items-center">
+                    <i class="fa-solid fa-dollar-sign  h-3.5 w-3.5 rounded-full me-2 "></i>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+
+
+        <div>
+          <button type="button" data-dropdown-toggle="language-dropdown-menu"
+            class="inline-flex items-center font-medium justify-center py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+            <img class="h-[15px] w-[15px]  me-2"
+              src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg" alt="az"><i
+              class="fa-solid fa-chevron-down"></i>
+
+          </button>
+          <!-- Dropdown for language -->
+          <div
+            class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700"
+            id="language-dropdown-menu">
+            <ul class="py-2 font-medium" role="none">
+              <li>
+                <a href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                  role="menuitem">
+                  <div class="inline-flex items-center">
+                    <img class="h-[15px] w-[15px]  me-2"
+                      src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg" alt="az">
+                  </div>
+                </a>
+
+              </li>
+              <li>
+                <a href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                  role="menuitem">
+                  <div class="inline-flex items-center">
+                    <svg aria-hidden="true" class="h-[15px] w-[15px] me-2" xmlns="http://www.w3.org/2000/svg"
+                      id="flag-icon-css-us" viewBox="0 0 512 512">
+                      <g fill-rule="evenodd">
+                        <g stroke-width="1pt">
+                          <path fill="#bd3d44"
+                            d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
+                            transform="scale(3.9385)" />
+                          <path fill="#fff"
+                            d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
+                            transform="scale(3.9385)" />
+                        </g>
+                        <path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)" />
+                        <path fill="#fff"
+                          d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z"
+                          transform="scale(3.9385)" />
+                      </g>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <div>
+          <ul class="hidden xl:flex items-center space-x-3 rtl:space-x-reverse ">
+            <li>
+              <button
+                class=" text-white  bg-gradient-to-r from-[#7028e4] via-[#b276d5] to-[#e5b2ca] rounded-[5px] px-[35px] py-[8px]">Qiymət təklifi al</button>
+            </li>
+            <li>
+              <button class=" text-[#a271f2] border-[1px] border-[#a271f2] rounded-[5px] py-[6px] px-[25px] ">Daxil
+                olun</button>
+            </li>
+          </ul>
+        </div>
+        
+
+
+
+
+        
+       <!-- Hamburger button, only visible on screens smaller than 1280px -->
+<div  class="xl:hidden">
+  <i onclick="likeOpen(event)" class="fa-solid fa-bars cursor-pointer "></i>
+</div>
+<div id="sidebar" class="fixed overflow-y-auto right-[-100%] z-10 top-0 max-w-[350px] w-full p-3 space-y-2 bg-white border-l-2 border-solid h-screen">
+  <div class="flex justify-end">
+    <i onclick="likeOpen(event)" class="fa-solid fa-xmark cursor-pointer"></i>
+  </div>
+
+  <!-- Buttons (Register / Login) -->
+  
+
+  <!-- Main Menu (visible only on large screens) -->
+  <div class="lg:hidden  pt-[30px] ">
+    <ul class="text-bold pl-[15px] text-[1em] font-manrope">
+      <li class="hover:text-blue-700 mb-[1em]">Veb sayt<i class="fa-solid fa-angle-down"></i></li>
+      <li class="hover:text-blue-700 mb-[1em]">Domen<i class="fa-solid fa-angle-down"></i></li>
+      <li class="hover:text-blue-700 mb-[1em]">Hostinq<i class="fa-solid fa-angle-down"></i></li>
+      <li class="hover:text-blue-700 mb-[1em]">Xidmətlər<i class="fa-solid fa-angle-down"></i></li>
+      <li class="hover:text-blue-700 mb-[1em]">Şirkət<i class="fa-solid fa-angle-down"></i></li>
+    </ul>
+  </div>
+<div class="flex flex-row gap-3 pl-[15px]">
+   
+
+  <div>
+    <button type="button" data-dropdown-toggle="currency-dropdown-menu"
+      class="inline-flex items-center font-medium justify-center py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+      <i class="fa-solid fa-manat-sign text-[1.2em] rounded-full me-2 "></i><i
+        class="fa-solid fa-chevron-down"></i>
+
+    </button>
+    <!-- Dropdown for currency -->
+    <div
+      class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700"
+      id="currency-dropdown-menu">
+      <ul class="py-2 font-medium" role="none">
+        <li>
+          <a href="#"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+            role="menuitem">
+            <div class="inline-flex items-center">
+              <i class="fa-solid fa-manat-sign  h-3.5 w-3.5 rounded-full me-2 "></i>
+            </div>
+          </a>
+
+        </li>
+        <li>
+          <a href="#"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+            role="menuitem">
+            <div class="inline-flex items-center">
+              <i class="fa-solid fa-dollar-sign  h-3.5 w-3.5 rounded-full me-2 "></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+
+
+  <div>
+    <button type="button" data-dropdown-toggle="language-dropdown-menu"
+      class="inline-flex items-center font-medium justify-center py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+      <img class="h-[15px] w-[15px]  me-2"
+        src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg" alt="az"><i
+        class="fa-solid fa-chevron-down"></i>
+
+    </button>
+    <!-- Dropdown for language -->
+    <div
+      class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700"
+      id="language-dropdown-menu">
+      <ul class="py-2 font-medium" role="none">
+        <li>
+          <a href="#"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+            role="menuitem">
+            <div class="inline-flex items-center">
+              <img class="h-[15px] w-[15px]  me-2"
+                src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Flag_of_Azerbaijan.svg" alt="az">
+            </div>
+          </a>
+
+        </li>
+        <li>
+          <a href="#"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+            role="menuitem">
+            <div class="inline-flex items-center">
+              <svg aria-hidden="true" class="h-[15px] w-[15px] me-2" xmlns="http://www.w3.org/2000/svg"
+                id="flag-icon-css-us" viewBox="0 0 512 512">
+                <g fill-rule="evenodd">
+                  <g stroke-width="1pt">
+                    <path fill="#bd3d44"
+                      d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
+                      transform="scale(3.9385)" />
+                    <path fill="#fff"
+                      d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
+                      transform="scale(3.9385)" />
+                  </g>
+                  <path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)" />
+                  <path fill="#fff"
+                    d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z"
+                    transform="scale(3.9385)" />
+                </g>
+              </svg>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="px-2">
+  <button
+      class="w-full mt-4 mb-6 bg-gradient-to-r from-[#7028e4] to-[#e5b2ca] text-white font-[500] self-center px-6 py-2 rounded-lg">Qiymət
+      Təklifi Al</button>
+</div>
+<div class="px-2">
+  <button
+      class="w-full self-center px-6 py-[10px] border-[#a271f2] font-semibold rounded-lg border-[1px] text-[#a271f2]">Daxil
+      olun
+  </button>
+</div>
+
+     
+</div>
+
+    </div>
+  </nav>
+</header>
+<body>
+
+  <section class="bg-white flex justify-start items-center flex-col h-screen pt-[30px]">
+    <div class=" max-w-[800px]">
+      <h1 class="text-[47px] max-md:text-[42px] my-4 max-md:leading-[50px] max-sm:text-[1em] max-sm:leading-[30px] leading-[70px] text-center font-[500] text-gray-700 flex items-center justify-center flex-wrap">
+        Biznesinizi bizimlə rəqəmsal dünyada
+        <span class="sm:relative inline-flex sm:px-2 items-center">
+            <img src="https://sayt.az/icons/easier.svg" alt="easier" class="hidden sm:block sm:absolute right-0 left-0 w-[570px] h-[300px]">
+            <span class="relative sm:z-10 sm:p-4 pl-[5px]  text-[#2563eb]">daha asan</span>
+        </span>
+        <span class="pl-[10px]">yoldan irəliyə apar!</span>
+    </h1>
+    
+    
+    </div>
+    <div class="max-w-[500px] pt-[20px] ">
+      <p class="text-center text-[1em]  lg:text-[1.2em] text-[#77748b]">Mütəxəssislərdən ibarət komandamız sizə müştəri dəstəyi və texniki yardım göstərmək üçün 24/7 hazırdır.</p>
+    </div>
+    <div class="px-2  mt-[20px]">
+      <button
+          class="w-full self-center px-6 py-[10px] border-[#a271f2] font-semibold rounded-lg border-[3px] text-[#2563eb]">Sayt Sifariş Et
+      </button>
+    </div>
+
+    <div class="flex items-center justify-center h-[30vh] lg:h-[9vh] mlg:h-[25vh] mt-[60px]">
+      <div
+          class="border border-gray-300 rounded-[50px] h-[50px] w-[28px] block align-middle cursor-pointer"
+          onclick="scrolldown()">
+          <div
+              class="h-[14px] w-[14px] rounded-[50%] bg-gray-300 ease-linear translate-x-[6px] translate-y-1 linAnimation">
+          </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="twins" class=" bg-white pb-[10px]  ">
+    <div class="container mx-auto px-6 lg:px-12 items-center justify-between  flex flex-col  kecid1:flex-col kecid960:flex-row">
+      
+    
+      <div id="firstandhr" class=" hidden  kecid1:max-w-[100%] kecid960:max-w-[50%]    kecid1:flex flex-col gap-5 w-full ">
+        <div id="first-div" class="flex justify-between gap-5">
+          <div class="w-[200px] shadow-md text-center rounded-[10px] p-4">
+            <p class="text-[#6b7293] pt-[10px]">Tamamlandı</p>
+            <div class="py-[20px]">
+              <span class="border-[5px] font-bold border-[#22bfa5] rounded-full w-[70px] h-[70px] inline-flex justify-center items-center">100%</span>
+            </div>
+            <div>
+              <p class="font-bold mt-[10px] text-[1.2em]">Sabina G.</p>
+              <p class="text-[#6b7293] pt-[10px] pb-[10px]">Designer</p>
+            </div>
+          </div>
+          <div class="w-[200px] shadow-md text-center rounded-[10px] p-4">
+            <p class="text-[#6b7293] pt-[10px]">İcradadır</p>
+            <div class="py-[20px]">
+              <span class="border-[5px] font-bold border-[#fc5185] rounded-full w-[70px] h-[70px] inline-flex justify-center items-center">90%</span>
+            </div>
+            <div>
+              <p class="font-bold mt-[10px] text-[1.2em]">Fuad M.</p>
+              <p class="text-[#6b7293] pt-[10px] pb-[10px]">Frontend Developer</p>
+            </div>
+          </div>
+          <div class="w-[200px] shadow-md text-center rounded-[10px] p-4">
+            <p class="text-[#6b7293] pt-[10px]">İcradadır</p>
+            <div class="py-[20px]">
+              <span class="border-[5px] font-bold border-[#fc5185] rounded-full w-[70px] h-[70px] inline-flex justify-center items-center">65%</span>
+            </div>
+            <div>
+              <p class="font-bold mt-[10px] text-[1.2em]">Ahmad R.</p>
+              <p class="text-[#6b7293] pt-[10px] pb-[10px]">Backend Developer</p>
+            </div>
+          </div>
+        </div>
+  
+       
+        <div id="hrli" class="flex flex-row justify-between items-center pt-[30px]">
+          <div>
+            <i class="fa-solid fa-circle-check text-[#a271f2] text-[1.7em]"></i>
+          </div>
+          <hr class="w-full h-[2px] bg-[#a271f2] border-none mx-2" />
+          <div>
+            <i class="fa-regular fa-circle-dot text-[#a271f2] text-[1.7em]"></i>
+          </div>
+          <hr class="w-full h-[2px] bg-[#e5e7eb] border-none mx-2" />
+          <div>
+            <i class="fa-regular fa-circle text-[#e5e7eb] text-[1.7em]"></i>
+          </div>
+        </div>
+  
+        
+        <div class="flex flex-row justify-between pt-[10px]">
+          <p class="text-[#6b7280] text-[1em]">Web Design</p>
+          <p class="text-[#6b7280] text-[1em]">Back-end</p>
+          <p class="text-[#6b7280] text-[1em]">Front-end</p>
+        </div>
+      </div>
+  
+
+      <div id="second-div" class=" w-full pt-[100px]  max-w-[100%]  kecid960:max-w-[40%] text-center">
+        <h1 class="text-black text-[1.6em] font-bold mb-[40px]">Vebsayt sifarişinizi <br> izləyin</h1>
+        <div class="px-2">
+          <input placeholder="Sifariş kodu"
+              class=" max-w-[90%] border-[1px] border-[#666] w-full placeholder:text-[#676767] placeholder:text-center self-center px-6 py-[10px] font-semibold rounded-lg  text-center" />
+       
+          <button
+              class="w-full max-w-[90%] mt-4 bg-[#722be3] shadow-[#a271f2] shadow-lg  text-white font-[500] self-center px-6 py-3 rounded-lg opacity-[.7] hover:opacity-[1]">İzlə
+            
+          </button>
+
+          <p class="text-[#6b7280] text-[.8em] py-[40px] pb-[140px] ">Sayt.az ilə sifarişlərinizə hər zaman nəzarət edin</p>
+        </div>
+    
+  
+    </div>
+  </section>
+  
+  <section class="bg-[#faf4ff] flex flex-col justify-center items-center py-24" >
+   
+      <div class="flex flex-col justify-center items-center text-center ">
+        <h2 class="font-[500] text-[1em] ck:text-[2.2em] font-manrope text-[#300b8c] py-[10px]">Domen Adını Axtarın</h2>
+        <p class="py-[10px] ck:text-inherit text-[1.2em] text-[#300b8c] ">.az domain sifariş etməmişdən öncə <a href="#" class="text-[#300b8c] font-bold  ">whois.az </a>saytında yoxlayın</p>
+        <p class="py-[10px] ck:text-inherit text-[1.2em] text-[#300b8c] ">Sayt.az-da .az domenləri yalnız aktiv hosting planı olan müştərilər üçün əlçatandır.<br/> Davam etməzdən əvvəl bizdən hosting aldığınıza əmin olun. <a href="#" class="text-[#300b8c] font-bold  "> Ətraflı oxu...</a></p>
+        </div>
+        <div class="flex flex-row items-center w-full max-w-[660px] px-4">
+          <input class="my-8 border-[1px] border-[#999] w-full  rounded-[5px_0_0_5px] border-r-0 px-[15px] py-[10px] outline-none"  type="text" placeholder="İstədiyiniz domen adını daxil edin" />
+          <select id="basqasey" class="my-8 border-[1px] border-[#999]   px-[15px] py-[10px]  rounded-[0_5px_5px_0] border-l-0 outline-none border-r-[1px] ">
+          
+            
+          </select>
+          <div>
+            <button class="bg-[#722be3] w-[100px] h-[45px] shadow-[#a271f2] shadow-lg rounded-[5px] opacity-[.7] hover:opacity-[1] text-white">Axtar</button>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-[50px]  ">
+          <div class="flex flex-col ck:flex-row gap-[50px]">
+                 
+            <div class="flex flex-col items-center justify-center text-center">
+              <p class="text-[#a271f2] font-bold text-[1.5em]">.az </p>
+              <p class=" text-[1em] text-[#a271f2] font-bold"> ₼40/il</p>
+            </div>
+  
+            <div class="flex flex-col items-center justify-center text-center">
+              <p class="text-[#a271f2] font-bold text-[1.5em]">.com
+                </p>
+              <p class=" text-[1em] text-[#a271f2] font-bold"> ₼25/il</p>
+            </div>
+  
+            <div class="flex flex-col items-center justify-center text-center">
+              <p class="text-[#a271f2] font-bold text-[1.5em]">.net
+               </p>
+              <p class=" text-[1em] text-[#a271f2] font-bold"> ₼38/il </p>
+            </div>
+
+          </div>
+          
+          <div class="flex flex-col ck:flex-row gap-[50px]">
+
+            <div class="flex flex-col items-center justify-center text-center">
+              <p class="text-[#a271f2] font-bold text-[1.5em]">.info
+                </p>
+              <p class=" text-[1em] text-[#a271f2] font-bold">₼55/il</p>
+            </div>
+  
+            <div class="flex flex-col items-center justify-center text-center">
+              <p class="text-[#a271f2] font-bold text-[1.5em]">.biz
+               </p>
+              <p class=" text-[1em] text-[#a271f2] font-bold">  ₼30/il</p>
+            </div>
+  
+            <div class="flex flex-col items-center justify-center text-center">
+              <p class="text-[#a271f2] font-bold text-[1.5em]">.org
+                </p>
+              <p class=" text-[1em] text-[#a271f2] font-bold"> ₼35/il </p>
+            </div>
+
+
+          </div>
+         
+        </div>
+        
+      </div>
+
+   
+  </section>
+
+
+  <section>
+    <div class="md:flex px-12 mb-16 mt-16 items-center md:gap-16">
+        <div class="flex flex-col gap-8">
+            <h1 class="max-md:text-[1.9] md:text-[2em] td:text-[2.8em] text-[#300B60] font-bold">Hostinq Planınızı Seçin</h1>
+            <p class="max-md:text-[20px] md:text-[1em]td:text-[20px] text-[#300B60] font-[500]">Yaxşı Bir Başlanğıc Təhlükəsiz və Güclü Hostinq Tələb Edir</p>
+        </div>
+        <div class="mt-6 pt-10 ">
+            <div id="btns" class="border rounded-[50px] flex max-w-[250px] w-full">
+                <button id="btn1" onclick="btndeyish('ayliq')" class="py-[14px] px-10 text-center bg-[#A271F2] text-white font-[500] rounded-[50px]">Aylıq</button>
+                <button id="btn2" onclick="btndeyish('illik')" class="text-center py-[14px] px-9 text-gray-500 rounded-[50px] font-[500] ">İllik</button>
+            </div>
+        </div>
+    </div>
+    <div class="py-5">
+        <div class="container px-4 mx-auto">
+            <div class="flex flex-wrap">
+                <div class="flex w-full mb-8 text-[#300B60] border-[3px]  md:w-[40%] md:mx-5 td:mx-0 td:w-[32.33%] ml-5 td:my-8 td:min-h-[450px] bg-[#fafbff] rounded-[10px] hover:border-[3px] hover:border-[#9734e5]">
+                    <div class="flex flex-grow flex-col p-6 space-y-6 sm:p-8 rounded-[10px] ">
+                        <div class="space-y-2">
+                            <span id="year1" class="text-6xl font-bold text-[36px] px-3">₼5<span class="text-[16px] font-[500]"> /ay</span></span>
+                        </div>
+                        <div class="bg-white rounded-[10px] p-3">
+                            <h4 class="text-2xl font-bold mb-10">Ekonomik</h4>
+                        <ul class="flex-1 mb-6">
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="font-bold">1</span> Domen</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="font-bold">3 GB</span> Disk Həcmi</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="font-bold">3</span> E-mail Hesabı</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Premium müştəri dəstəyi</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>SSL Təhlükəsizliyi</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Yedəkləmə və bərpa</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="font-bold">Limitsiz</span> Trafik</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Təhlükəsizlik Xüsusiyyətləri</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>cPanel</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>FTP Girişi</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Fayl İdarəedici</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div><button type="button" class="w-[100%] border border-[#9734e5] text-[#9734e5] bg-white hover:bg-[#9734e5] hover:text-white transition-all rounded-[50px] inline-block px-5 py-3 font-semibold tracking-wider text-center">Sifariş Et</button></div>
+                    </div>
+                </div>
+                <div class="flex w-full relative text-[#300B60] mb-8 md:w-[40%]  td:w-[32.33%] td:mb-0 td:min-h-[500px] bg-[#fafbff] rounded-[10px] border-[3px] border-[#9734e5] shadow-[#a271f2] shadow-lg hover:border-[3px] hover:border-[#9734e5]">
+                    <div class="text-[#9734e5] bg-white right-2 text-[12px] font-[700] top-3 rounded-[50px] absolute px-3 py-2"><span>ƏN POPULYAR</span></div>
+                    <div class="flex flex-grow flex-col p-6 space-y-6 sm:p-8 rounded-[10px]">
+                        <div class="space-y-2">
+                            <span id="year2" class="text-6xl font-bold text-[36px] px-3">₼10<span class="text-[16px] font-[500]"> /ay</span></span>
+                        </div>
+                        <div class="bg-white rounded-[10px] p-3">
+                            <h4 class="text-2xl font-bold mb-10">Standart</h4>
+                        <ul class="flex-1 mb-6">
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="font-bold">2</span> Domen</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="font-bold">8 GB</span> Disk Həcmi</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="font-bold">5</span> E-mail Hesabı</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Premium müştəri dəstəyi</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>SSL Təhlükəsizliyi</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Yedəkləmə və bərpa</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="font-bold">Limitsiz</span> Trafik</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Təhlükəsizlik Xüsusiyyətləri</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>cPanel</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>FTP Girişi</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Fayl İdarəedici</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div><button type="button" class=" text-white w-[100%] rounded-[50px] bg-[#9734e5] hover:bg-white hover:text-[#9734e5] hover:border hover:border-[#9734e5] transition-all inline-block px-5 py-3 font-semibold tracking-wider text-center">Sifariş Et</button></div>
+                    </div>
+                </div>
+                <div class="flex w-full mb-8 text-[#300B60] md:w-[40%]  td:w-[32.33%] border-[3px]  td:my-8 td:min-h-[450px] bg-[#fafbff] rounded-[10px] hover:border-[3px] hover:border-[#9734e5]">
+                    <div class="flex flex-grow flex-col p-6 space-y-6 sm:p-8 rounded-[10px]">
+                        <div class="space-y-2">
+                            <span id="year3" class="text-6xl font-bold text-[36px] px-3">₼20<span class="text-[16px] font-[500]"> /ay</span></span>
+                        </div>
+                        <div class="bg-white rounded-[10px] p-3">
+                            <h4 class="text-2xl font-bold mb-10">Professional</h4>
+                        <ul class="flex-1 mb-6">
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="font-bold">5</span> Domen</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="font-bold">14 GB</span> Disk Həcmi</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="font-bold">Limitsiz</span> E-mail Hesabı</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Premium müştəri dəstəyi</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>SSL Təhlükəsizliyi</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Yedəkləmə və bərpa</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span><span class="font-bold">Limitsiz</span> Trafik</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Təhlükəsizlik Xüsusiyyətləri</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>cPanel</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>FTP Girişi</span>
+                            </li>
+                            <li class="flex mb-2 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="h-6 w-5 flex-none text-[#0ab394]">
+                                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Fayl İdarəedici</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div><button type="button" class="w-[100%] bg-white border border-[#9734e5] text-[#9734e5] hover:text-white hover:bg-[#9734e5] transition-all inline-block px-5 py-3 font-semibold tracking-wider text-center rounded-[50px] ">Sifariş Et</button></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-[70px]">
+  <div class="flex lg:justify-between justify-start flex-col md:flex-row px-[60px] mb-[80px] ">
+    <div>
+      <h1 class=" font-bold text-[2.5em] text-[#2f1c6a]">Startuplar</h1>
+      <p class="text-[1.2em] text-[#2f1c6a]">Mütəxəssis məsləhətlərimizlə biznesinizi necə inkişaf etdirəcəyinizi öyrənin.</p>
+    </div>
+    <div>
+      <button class="w-full max-w-[200px] mt-4 bg-[#722be3] shadow-[#a271f2] shadow-lg  text-white font-[500] self-center px-6 py-3 rounded-lg opacity-[.7] hover:opacity-[1]">Bütün StartUplar <i class="fa-solid fa-person-walking-arrow-right"></i></button>
+    </div>
+    
+  </div>
+
+  <div id="thirds" class="flex flex-col items-center  lg:flex-row justify-center gap-[30px] px-[15px] ">
+    
+
+   
+    <div class="lg:w-[370px] max-w-[600px] w-full p-6 rounded-[10px] shadow-md border-[1px] bg-[#faf4ff] dark:text-gray-900">
+      <img src="https://api.websiteca.com/storage/FEJiun5EcIZrI9J7vYCrPZLqO0mjMU0YkDI7dfKO.png" alt="" class="object-cover object-center w-full rounded-[15px] h-[330px] lg:h-[200px] dark:bg-gray-500 transition duration-200 hover:scale-[1.1]">
+      <div class="mt-6 mb-2">
+        <h2 class="text-[1.7em] font-semibold tracking-wide text-[#2f1c6a] ]"><a href="#">telefon.az</a></h2>
+      </div>
+      <p class="dark:text-gray-800 text-[#5a27a2]">Telefonların online alışı və satışı</p>
+      <div>
+        <button class="w-full max-w-[150px] mt-[40px] bg-[#722be3] shadow-[#a271f2] shadow-lg  text-white font-[500] self-center px-6 py-2 rounded-[30px] opacity-[.7] hover:opacity-[1]">Ətraflı oxu...</button>
+      </div>
+    </div>
+
+    <div class="lg:w-[370px] max-w-[600px] w-full p-6 rounded-[10px] shadow-md border-[1px] bg-[#faf4ff] dark:text-gray-900">
+      <img src="https://api.websiteca.com/storage/edFyv3NmnHPNPEQTGjI94ZSjUQYoCzsfdmM36oP1.jpg" alt="" class="object-cover object-center w-full rounded-[15px] h-[330px] lg:h-[200px] dark:bg-gray-500 transition duration-200 hover:scale-[1.1]">
+      <div class="mt-6 mb-2">
+        <h2 class="text-[1.7em] font-semibold tracking-wide text-[#2f1c6a] ]"><a href="#">Sayt.az</a></h2>
+      </div>
+      <p class="dark:text-gray-800 text-[#5a27a2]">Sayt.az 2004-cü ildən fəaliyyətə başlamışdır. 2004-2016 -cı illər...</p>
+      <div>
+        <button class="w-full max-w-[150px] mt-[40px] bg-[#722be3] shadow-[#a271f2] shadow-lg  text-white font-[500] self-center px-6 py-2 rounded-[30px] opacity-[.7] hover:opacity-[1]">Ətraflı oxu...</button>
+      </div>
+    </div>
+
+
+    <div class="lg:w-[370px] max-w-[600px] w-full p-6 rounded-[10px] shadow-md border-[1px] bg-[#faf4ff] dark:text-gray-900">
+      <img src="https://api.websiteca.com/storage/BmIYrv23cj5kCPw8CiZ2DEJHuYvzxSB9yGnXH4Bf.png" alt="" class="object-cover object-center w-full rounded-[15px] h-[330px] lg:h-[200px] dark:bg-gray-500 transition duration-200 hover:scale-[1.1]">
+      <div class="mt-6 mb-2">
+        <h2 class="text-[1.7em] font-semibold tracking-wide text-[#2f1c6a] ]">paracoin.network</h2>
+      </div>
+      <p class="dark:text-gray-800 text-[#5a27a2]">Para göndər & qəbul et, NFT Al & Sat, Ağıllı müqavilələr hazırla, Birja, Ödənişlər</p>
+      <div>
+        <button class="w-full max-w-[150px] mt-[40px] bg-[#722be3] shadow-[#a271f2] shadow-lg  text-white font-[500] self-center px-6 py-2 rounded-[30px] opacity-[.7] hover:opacity-[1]">Ətraflı oxu...</button>
+      </div>
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<section class="py-[60px]">
+
+  <div class="flex flex-col justify-center items-center">
+    <h1 class="font-bold md:text-[1.9em] text-[1.3em] text-[#2f1c6a]">Müştərilərimizin Rəyləri</h1>
+    <h3 class="font-[500] md:text-[1.5em] text-[1.1em] text-[#2f1c6a]">Müştərilərin fikirləri</h3>
+  </div>
+
+  <!-- Swiper -->
+  <div class="swiper mySwiper py-[40px] ">
+    <div class="swiper-wrapper">
+
+
+
+      <div class="swiper-slide  flex flex-col">
+        <h1 class="font-bold text-[1em] text-[#2f1c6a]">Müştərilərdən müsbət rəy</h1>
+        <p class="text-[#738296] py-[20px] text-[.9em] ">Sayt.az saytımın hazırlanmasında gözləntilərimi aşdı. Mənim istəklərimi mükəmməl şəkildə əks etdirdi.</p>
+        <div class="flex flex-row gap-4">
+           <div class="w-[40px] h-[40px] "><img class="rounded-[50%]" src="https://api.websiteca.com/storage/kBaPiZJ8SftpeTvCglQ9wTUC7BunjjhvfPKv3e2P.png" alt="tapilmadi!"></div>
+           <div class="flex flex-col justify-start">
+            <h5 class="pb-0 text-[#344256] text-[.9em]">Seljan Novruz</h5>
+            <p class="text-[#738296] text-[.7em] text-start ">CEO</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="swiper-slide">
+        <div class="swiper-slide  flex flex-col">
+          <h1 class="font-bold text-[1em] text-[#2f1c6a]">Müştərilərdən müsbət rəy</h1>
+          <p class="text-[#738296] py-[20px] text-[.9em] ">Sayt.az komandası tərəfindən hazırlanan ev alqı-satqısı saytı, gözləntilərimi tamamilə doğrultdu. Sayt.az-a dəyərli xidmətləri üçün təşəkkür edirəm.</p>
+          <div class="flex flex-row gap-4">
+             <div class="w-[40px] h-[40px] "><img class="rounded-[50%]" src="https://api.websiteca.com/storage/t6bTFdGMt22ImMHtBk82gD3DTDg0cQ9jMUuljIEW.png" alt="tapilmadi!"></div>
+             <div class="flex flex-col justify-start">
+              <h5 class="pb-0 text-[#344256] text-[.9em]">Bahman Ahmadlı</h5>
+              <p class="text-[#738296] text-[.7em] text-start ">CEO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="swiper-slide">
+        <div class="swiper-slide  flex flex-col">
+          <h1 class="font-bold text-[1em] text-[#2f1c6a]">Müştərilərdən müsbət rəy</h1>
+          <p class="text-[#738296] py-[20px] text-[.9em] ">Veb saytımı hazırlamaq üçün Sayt.az-ı seçmək biznesim üçün verdiyim ən yaxşı qərar idi.</p>
+          <div class="flex flex-row gap-4">
+             <div class="w-[40px] h-[40px] "><img class="rounded-[50%]" src="https://api.websiteca.com/storage/WAUSkNOdjK5fUxWQs2x7jOeOr4f0WZIgumqqhb31.png" alt="tapilmadi!"></div>
+             <div class="flex flex-col justify-start">
+              <h5 class="pb-0 text-[#344256] text-[.9em]">Hikmat Taghiyev</h5>
+              <p class="text-[#738296] text-[.7em] text-start ">Accountant</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="swiper-button-next  text-[#9a66eb] w-[20px]  h-[20px]"></div>
+    <div class="swiper-button-prev text-[#9a66eb]"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+
+</section>
+
+ 
+
+
+<footer class="py-16 px-7 bg-[#FAF4FF] border-t-[1px]">
+  <div class="flex flex-col md:flex-row items-start max-w-[1080px] mx-auto gap-10">
+      <div>
+          <img src="https://sayt.az/icons/saytaz.svg" alt="imgs" />
+          <p class="max-w-[500px] text-[#4A2182] mt-6 mb-10">Sayt.az - Web saytların hazırlanması, Domain, Hosting satışı, SEO, SMM və texniki xidmətlər təklif edir.</p>
+          <h3 class="mb-6">Bizi izləyin :</h3>
+          <div class="flex items-center justify-start gap-4">
+              <div><i class="fa-brands text-[#A271F2] text-[37px] hover:text-[#4A2182] transition-all fa-facebook"></i></div>
+              <div><i class="fa-brands text-[#A271F2] text-[37px] hover:text-[#4A2182] transition-all fa-instagram"></i></div>
+              <div><i class="fa-brands text-[#A271F2] text-[37px] hover:text-[#4A2182] transition-all fa-whatsapp"></i></div>
+              <div><i class="fa-brands text-[#A271F2] text-[37px] hover:text-[#4A2182] transition-all fa-linkedin-in"></i></div>
+              <div><i class="fa-brands text-[#A271F2] text-[37px] hover:text-[#4A2182] transition-all fa-youtube"></i></div>
+          </div>
+      </div>
+
+      <div class="flex md:flex-row flex-col gap-10 items-start">
+          <div>
+              <h3 class="text-[#300B60CE] mb-8 font-bold text-[23px] uppercase">Hostinq & Domen</h3>
+              <div class="mb-6 text-[#4A2182] font-[400] text-lg hover:text-[#A271F2]">Domen</div>
+              <div class="mb-6 text-[#4A2182] font-[400] text-lg hover:text-[#A271F2]">Veb Hostinq</div>
+              <div class="mb-6 text-[#4A2182] font-[400] text-lg hover:text-[#A271F2]">VPS Hostinq</div>
+              <div class="mb-6 text-[#4A2182] font-[400] text-lg hover:text-[#A271F2]">Server</div>
+          </div>
+          <div>
+              <h3 class="text-[#300B60CE] mb-8 font-bold text-[23px] uppercase">Şirkət</h3>
+              <div class="mb-6 text-[#4A2182] font-[400] text-lg hover:text-[#A271F2]">Haqqımızda</div>
+              <div class="mb-6 text-[#4A2182] font-[400] text-lg hover:text-[#A271F2]">Əlaqə</div>
+              <div class="mb-6 text-[#4A2182] font-[400] text-lg hover:text-[#A271F2]">Bloq</div>
+              <div class="mb-6 text-[#4A2182] font-[400] text-lg hover:text-[#A271F2]">Portfolio</div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+  
+  
+  <script src="js/hamburger.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/swiper.js"></script>
+</body>
+
+</html>
