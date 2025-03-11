@@ -1,23 +1,25 @@
-var swiper = new Swiper(".mySwiper", {
-  loop: true, // Sonsuz loop üçün
+let  swiper = new Swiper(".mySwiper", {
+  loop: true, 
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
   pagination: {
     el: ".swiper-pagination",
-    clickable: true, // Pagination düymələri kliklənsin
+    clickable: true, 
   },
   autoplay: {
-    delay: 3000, // 3 saniyədən bir avtomatik keçsin
-    disableOnInteraction: false, // İstifadəçi müdaxilə etsə də autoplay işləsin
+    delay: 3000,
+    disableOnInteraction: false, 
   },
   mousewheel: {
-    invert: false, // Təbii sürüşdürmə effekti üçün
+    invert: false, 
   },
   keyboard: {
-    enabled: true, // Klaviatura ilə idarə olunsun
+    enabled: true, 
   },
-  grabCursor: true, // İstifadəçi siçanla tutub sürüşdürə bilsin
+  grabCursor: true, 
+
+  
 });
 
